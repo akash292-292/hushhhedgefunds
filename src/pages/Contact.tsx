@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -11,6 +11,9 @@ const reasonOptions = [
 ];
 
 export default function Contact() {
+  // State to hold the random numbers and the form data
+  const [num1, setNum1] = useState<number>(0);
+  const [num2, setNum2] = useState<number>(0);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -21,16 +24,51 @@ export default function Contact() {
     captcha: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
+  const [captchaError, setCaptchaError] = useState<string>('');  // State for captcha error message
+
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
+  // Function to generate random numbers between 0 and 99
+  const generateRandomNumbers = () => {
+    const randomNum1 = Math.floor(Math.random() * 100);  // Random number between 0 and 99
+    const randomNum2 = Math.floor(Math.random() * 100);  // Random number between 0 and 99
+    setNum1(randomNum1);
+    setNum2(randomNum2);
   };
 
+  // Call the generate function when the component mounts
+  useEffect(() => {
+    generateRandomNumbers();
+  }, []); // Empty dependency array means it runs only once when the component mounts
+
+  // Handle form data change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Validate CAPTCHA
+    const userCaptcha = parseInt(formData.captcha, 10);
+    const correctAnswer = num1 + num2;
+
+    if (userCaptcha !== correctAnswer) {
+      setCaptchaError('Incorrect sum. Please try again.');
+      return;  // Stop form submission
+    } else {
+      setCaptchaError(''); // Clear error if captcha is correct
+    }
+
+    // Handle the form data (e.g., send it to an API, etc.)
+    console.log('Form submitted successfully', formData);
+
+    // After successful submission, navigate to the home page
+    navigate('/');
   };
 
   return (
@@ -52,6 +90,7 @@ export default function Contact() {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Other form fields */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                   Name <span className="text-red-600">*</span>
@@ -146,9 +185,10 @@ export default function Contact() {
                 />
               </div>
 
+              {/* CAPTCHA */}
               <div>
                 <label htmlFor="captcha" className="block text-sm font-medium text-gray-700">
-                  What is the sum of 2 and 5? <span className="text-red-600">*</span>
+                  What is the sum of {num1} and {num2}? <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
@@ -159,6 +199,7 @@ export default function Contact() {
                   onChange={handleChange}
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
                 />
+                {captchaError && <p className="text-red-600 text-sm">{captchaError}</p>}
               </div>
 
               <div>
