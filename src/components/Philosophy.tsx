@@ -138,7 +138,7 @@ export default function Philosophy() {
           makes us the ideal partner for those who demand financial excellence in a new era of investing.
         </p>
         <div className="flex justify-end">
-          <a href="#" className="text-red-600 hover:text-red-700 flex items-center">
+          <a href="https://hushhtechnologies.netlify.app/Login" className="text-red-600 hover:text-red-700 flex items-center">
             Know more about us <span className="ml-2">→</span>
           </a>
         </div>
