@@ -6,6 +6,7 @@ import Philosophy from './components/Philosophy';
 import Footer from './components/Footer';
 import Login from './pages/Login'
 import Contact from './pages/Contact';
+import Signup from './pages/Signup';
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about/philosophy" element={<Philosophy />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path='/Signup' element={<Signup/>}/>
         </Routes>
         <Footer />
       </div>
