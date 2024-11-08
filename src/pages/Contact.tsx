@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const reasonOptions = [
   "General Inquiry",
@@ -10,10 +11,17 @@ const reasonOptions = [
   "Other"
 ];
 
+emailjs.init("_TMzDc8Bfy6riSfzq");
+
 export default function Contact() {
-  // State to hold the random numbers and the form data
   const [num1, setNum1] = useState<number>(0);
   const [num2, setNum2] = useState<number>(0);
+    const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [subject, setSubject] = useState(null);
+  const [message, setMessage] = useState("");
+
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -24,24 +32,23 @@ export default function Contact() {
     captcha: ''
   });
 
-  const [captchaError, setCaptchaError] = useState<string>('');  // State for captcha error message
+  
 
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const [captchaError, setCaptchaError] = useState<string>('');
+  const navigate = useNavigate();
+  const form = useRef<HTMLFormElement>(null);
 
-  // Function to generate random numbers between 0 and 99
   const generateRandomNumbers = () => {
-    const randomNum1 = Math.floor(Math.random() * 100);  // Random number between 0 and 99
-    const randomNum2 = Math.floor(Math.random() * 100);  // Random number between 0 and 99
+    const randomNum1 = Math.floor(Math.random() * 100);
+    const randomNum2 = Math.floor(Math.random() * 100);
     setNum1(randomNum1);
     setNum2(randomNum2);
   };
 
-  // Call the generate function when the component mounts
   useEffect(() => {
     generateRandomNumbers();
-  }, []); // Empty dependency array means it runs only once when the component mounts
+  }, []);
 
-  // Handle form data change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
@@ -49,32 +56,45 @@ export default function Contact() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate CAPTCHA
     const userCaptcha = parseInt(formData.captcha, 10);
     const correctAnswer = num1 + num2;
 
     if (userCaptcha !== correctAnswer) {
       setCaptchaError('Incorrect sum. Please try again.');
-      return;  // Stop form submission
+      return;
     } else {
-      setCaptchaError(''); // Clear error if captcha is correct
+      setCaptchaError('');
     }
 
-    // Handle the form data (e.g., send it to an API, etc.)
-    console.log('Form submitted successfully', formData);
+    const serviceId = "service_tsuapx9";
+    const templateId = "template_50ujflf";
+    const userId = "DtG13YmoZDccI-GgA";
 
-    // After successful submission, navigate to the home page
-    navigate('/');
+    const templateParams = {
+      name: formData.name,
+      company: formData.company,
+      email: formData.email,
+      phone: formData.phone,
+      reason: formData.reason,
+      message: formData.message,
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, userId)
+      .then((result) => {
+        console.log('Email sent successfully:', result.text);
+        toast.success('Email sent successfully!');
+        navigate('/');
+      }, (error) => {
+        console.error('Failed to send email:', error.text);
+        toast.error('Failed to send email. Please try again later');
+      });
   };
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* <Navbar /> */}
-      
       <main className="flex-grow bg-white">
         <div className="container mx-auto px-6 py-12">
           <div className="max-w-2xl mx-auto">
@@ -89,8 +109,7 @@ export default function Contact() {
               For all other inquiries, please submit the form below.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Other form fields */}
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                   Name <span className="text-red-600">*</span>
@@ -185,7 +204,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* CAPTCHA */}
               <div>
                 <label htmlFor="captcha" className="block text-sm font-medium text-gray-700">
                   What is the sum of {num1} and {num2}? <span className="text-red-600">*</span>
@@ -211,11 +229,10 @@ export default function Contact() {
                 </button>
               </div>
             </form>
+            <ToastContainer/>
           </div>
         </div>
       </main>
-
-      {/* <Footer /> */}
     </div>
   );
 }
