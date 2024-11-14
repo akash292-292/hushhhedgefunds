@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Divider,
+  Flex,
   Heading,
   HStack,
   List,
@@ -384,31 +385,115 @@ const Business = () => {
         </Accordion>
       </VStack>
 
-      <VStack my={{md:'3rem',base:'1.5rem'}} px={'18.5%'} gap={{md:'1rem',base:'0.5rem'}} textAlign={'left'} alignItems={'center'} justifyContent={'center'}>
-  <Text
-    textAlign={'left'}
-    fontWeight={'700'}
-    fontSize={{md:'1.5rem',base:'0.75rem'}}
-    lineHeight={'1.2'}
-    color={'rgba(28,28,28,1)'}
-    alignSelf="flex-start" 
-  >
-    Glimpse into Developer APIs
-  </Text>
-  <Box display="flex" justifyContent="center" width="100%">
-    <iframe
-      style={{ borderRadius: '10px' }}
-      width="950"
-      height="506"
-      src="https://www.youtube.com/embed/mXymL7IZBPg?si=ipvIGuTEY7eQlvJC"
-      title="YouTube video player"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerPolicy="strict-origin-when-cross-origin"
-      allowFullScreen
-    ></iframe>
-  </Box>
-</VStack>
+      <VStack
+        my={{ md: "3rem", base: "1.5rem" }}
+        px={"18.5%"}
+        gap={{ md: "1rem", base: "0.5rem" }}
+        textAlign={"left"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <Text
+          textAlign={"left"}
+          fontWeight={"700"}
+          fontSize={{ md: "1.5rem", base: "0.75rem" }}
+          lineHeight={"1.2"}
+          color={"rgba(28,28,28,1)"}
+          alignSelf="flex-start"
+        >
+          Glimpse into Developer APIs
+        </Text>
+        <Box display="flex" justifyContent="center" width="100%">
+          <iframe
+            style={{ borderRadius: "10px" }}
+            width="950"
+            height="506"
+            src="https://www.youtube.com/embed/mXymL7IZBPg?si=ipvIGuTEY7eQlvJC"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </Box>
+      </VStack>
+
+      <Flex
+      direction={{ base: 'column', lg: 'row' }}
+      align="center"
+      justify="space-between"
+      bg="#F5F7F9"
+      p={{ base: 6, lg: 10 }}
+      w="full"
+      gap={10}
+    >
+      {/* Heading Section */}
+      <Box textAlign={{ base: 'center', lg: 'left' }} flexShrink={0}>
+        <Heading as="h2" size="lg" mb={6} color="#4A5568">
+          Are you one of the following?
+        </Heading>
+      </Box>
+
+      {/* Cards Section */}
+      <Flex
+        flexWrap="wrap"
+        justify="space-around"
+        w="full"
+        gap={6}
+        mt={{ base: 8, lg: 0 }}
+      >
+        {/* Card 1 */}
+        <VStack
+          bg="#E6F4FF"
+          p={8}
+          borderRadius="md"
+          align="start"
+          boxShadow="md"
+          maxW="300px"
+        >
+          <Heading as="h3" size="md" color="#2D3748">
+            Forward-thinking Businesses
+          </Heading>
+          <Text mt={4} color="#4A5568">
+            Across industries like <b>fashion, retail, wellness, travel, electronics, luxury,</b> and more, Hushh APIs empower you to personalize the customer journey and build deeper connections.
+          </Text>
+        </VStack>
+
+        {/* Card 2 */}
+        <VStack
+          bg="#E6F4FF"
+          p={8}
+          borderRadius="md"
+          align="start"
+          boxShadow="md"
+          maxW="300px"
+        >
+          <Heading as="h3" size="md" color="#2D3748">
+            Application <br></br> Developers
+          </Heading>
+          <Text mt={4} color="#4A5568">
+            Integrate Hushh's powerful consent-driven data insights into your apps to create <b>hyper-personalized user experiences</b> that drive engagement and satisfaction.
+          </Text>
+        </VStack>
+
+        {/* Card 3 */}
+        <VStack
+          bg="#E6F4FF"
+          p={8}
+          borderRadius="md"
+          align="start"
+          boxShadow="md"
+          maxW="300px"
+        >
+          <Heading as="h3" size="md" color="#2D3748">
+            CRM & Database Managers
+          </Heading>
+          <Text mt={4} color="#4A5568">
+            Enrich your customer profiles with valuable, <b>consented data</b> to power personalized marketing campaigns, targeted segmentation, and data-driven decision-making for your organization.
+          </Text>
+        </VStack>
+      </Flex>
+    </Flex>
     </>
   );
 };
