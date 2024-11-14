@@ -440,6 +440,7 @@ const Business = () => {
         justify="space-around"
         w="full"
         gap={6}
+         bg="#E6F4FF"
         mt={{ base: 8, lg: 0 }}
       >
         {/* Card 1 */}
@@ -494,6 +495,232 @@ const Business = () => {
         </VStack>
       </Flex>
     </Flex>
+  <Box  bg="#F5F7F9" mb={{md:'2rem',base:'1rem'}} w={'100%'} display={'flex'} alignItems={'center'} justifyContent={'center'} textAlign={'center'}>
+    <Button
+          minW={{ md: "780px", base: "8rem" }}
+          px={"12px"}
+          bg={"rgba(153, 40, 112, 1)"}
+          color={"white"}
+          _hover={{
+            color: "white",
+            background: "black",
+          }}
+          onClick={() =>
+            window.open(
+              "https://docs.google.com/forms/d/e/1FAIpQLSeIQF0GhLxmwEHrmOpMRQVlxuJBtQYUP2oT_GQt16h8oyw2Dg/viewform",
+              "_blank"
+            )
+          }
+        >
+          Want to know more about Hushh Companion?
+        </Button>
+        </Box>  
+
+        <Divider borderWidth={"2px"} my={"1rem"} stroke={"grey"} />
+
+        <VStack
+        gap={{ md: "2rem", base: "1rem" }}
+        alignItems={"center"}
+        textAlign={"center"}
+        justifyContent={"center"}
+      >
+        <Text
+          color={"#1c1c1c"}
+          fontWeight={"700"}
+          lineHeight={"1.2"}
+          fontSize={{ md: "2.3rem", base: "1.4rem" }}
+        >
+VIBE Search API
+</Text>
+        <Text
+          color={"#434343"}
+          fontWeight={"600"}
+          lineHeight={"1.2"}
+          fontSize={{ md: "1.17rem", base: "0.65rem" }}
+        >
+          Delivers highly personalized search results using semantic analysis, image search, <br></br> and implicit behavior understanding. Boosts customer satisfaction, <br></br> engagement, and revenue.*
+
+
+        </Text>
+        <Accordion
+          allowToggle
+          minW={"80%"}
+          w="100%"
+          flexDirection="row"
+          p={{ md: "4rem", base: "1rem" }}
+          display="flex"
+          justifyContent="center"
+          gap={{ md: "6rem", base: "1rem" }}
+        >
+          <AccordionItem>
+            <Box
+              bg="purple.200"
+              p={4}
+              w={{ md: "250px", base: "150px" }}
+              h={{ md: "200px", base: "100px" }}
+              m={2}
+              textAlign="center"
+            >
+              <AccordionButton
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="center"
+                h="100%"
+              >
+                <Box
+                  as="span"
+                  flex="1"
+                  fontWeight="bold"
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  alignSelf="flex-start"
+                >
+                  Discover Your <br></br> Digital Self
+                </Box>
+                <ChevronDownIcon
+                  style={{
+                    background: "#5f6368",
+                    color: "white",
+                    borderRadius: "50%",
+                  }}
+                  stroke="white"
+                  alignSelf="flex-end"
+                />
+              </AccordionButton>
+            </Box>
+            <AccordionPanel pb={4} fontSize={{ md: "1rem", base: "0.8rem" }}>
+              <Box maxWidth="280px" mx="auto">
+                <UnorderedList spacing={3} textAlign="left">
+                  <ListItem>
+                    <strong>Track Your Browsing:</strong> Gain insights into
+                    your online behavior and interests.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Evolving Interests:</strong> Watch how your
+                    preferences change over time.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Data Control:</strong> Choose exactly what
+                    information you want to collect.
+                  </ListItem>
+                </UnorderedList>
+              </Box>
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <Box
+              bg="pink.200"
+              w={{ md: "250px", base: "150px" }}
+              h={{ md: "200px", base: "100px" }}
+              p={4}
+              m={2}
+              textAlign="center"
+            >
+              <AccordionButton
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="center"
+                h="100%"
+              >
+                <Box
+                  as="span"
+                  flex="1"
+                  fontWeight="bold"
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  alignSelf="flex-start"
+                >
+                  Shop Smarter, <br></br> Not Harder
+                </Box>
+                <ChevronDownIcon
+                  style={{
+                    background: "#5f6368",
+                    color: "white",
+                    borderRadius: "50%",
+                  }}
+                  stroke="white"
+                  alignSelf="flex-end"
+                />
+              </AccordionButton>
+            </Box>
+            <AccordionPanel pb={4} fontSize={{ md: "1rem", base: "0.8rem" }}>
+              <Box maxWidth="280px" mx="auto">
+                <UnorderedList spacing={3} textAlign="left">
+                  <ListItem>
+                    <strong>Cross-Brand Shopping Cart: </strong> Compare
+                    products across different websites with ease.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Curated Collections: </strong> Save and organize
+                    products you love.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Link Library:</strong> Keep all your favorite
+                    content just a click away.
+                  </ListItem>
+                </UnorderedList>
+              </Box>
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <Box
+              bg="pink.300"
+              w={{ md: "250px", base: "150px" }}
+              h={{ md: "200px", base: "100px" }}
+              p={4}
+              m={2}
+              textAlign="center"
+            >
+              <AccordionButton
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="center"
+                h="100%"
+              >
+                <Box
+                  as="span"
+                  flex="1"
+                  fontWeight="bold"
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  alignSelf="flex-start"
+                >
+                  Your Data, <br></br> Your Way
+                </Box>
+                <ChevronDownIcon
+                  style={{
+                    background: "#5f6368",
+                    color: "white",
+                    borderRadius: "50%",
+                  }}
+                  stroke="white"
+                  alignSelf="flex-end"
+                />
+              </AccordionButton>
+            </Box>
+            <AccordionPanel pb={4} fontSize={{ md: "1rem", base: "0.8rem" }}>
+              <Box maxWidth="280px" mx="auto">
+                <UnorderedList spacing={3} textAlign="left">
+                  <ListItem>
+                    <strong>Personal Insights:</strong> Understand your digital
+                    footprint like never before.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Data Portability:</strong> Easily export your
+                    information for personal use.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Future-Ready: </strong> Coming soon - Hushh Wallet
+                    for secure, consensual data monetization.
+                  </ListItem>
+                </UnorderedList>
+              </Box>
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+      </VStack>
     </>
   );
 };
