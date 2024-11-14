@@ -16,7 +16,7 @@ import CardImage from "../../../public/images/fendiCards.png";
 import DressImage from "../../../public/images/dressImage.png";
 import Mobile from "../../../public/images/mobile.png";
 import QRImage from "../../../public/images/QRWallet.png";
-import Companion from "../../svg/companion.svg"
+import Companion from "../../svg/companion.svg";
 import {
   Accordion,
   AccordionItem,
@@ -797,14 +797,13 @@ const Consumers = () => {
         </Accordion>
       </VStack>
 
-
- <HStack
+      <HStack
         my={{ md: "2rem", base: "1rem" }}
         alignItems={"center"}
         justifyContent={"center"}
         gap={{ md: "4rem", base: "1rem" }}
       >
-       <iframe
+        <iframe
           style={{ borderRadius: "15px" }}
           width="728"
           height="550"
@@ -828,7 +827,7 @@ const Consumers = () => {
           justifyContent={"center"}
           gap={{ md: "4rem", base: "1rem" }}
           bg={"rgba(0,0,0,0)"}
-          textAlign={'right'}
+          textAlign={"right"}
           mx={{ md: "6rem", base: "1rem" }}
         >
           <Text
@@ -839,9 +838,9 @@ const Consumers = () => {
           >
             Ready to enhance your digital journey? Add Hushh Companion
             <br></br>
-           to Chrome today and start exploring the web on your own
-           <br></br>
-           terms!
+            to Chrome today and start exploring the web on your own
+            <br></br>
+            terms!
           </Text>
           <Image
             src={Companion}
@@ -869,6 +868,87 @@ const Consumers = () => {
         </Button>
       </VStack>
       <Divider borderWidth={"2px"} my={"1rem"} stroke={"grey"} />
+
+      <VStack>
+        <Text
+          fontWeight={"700"}
+          lineHeight={"1.2"}
+          color={"#1c1c1c"}
+          fontSize={{ md: "2.3rem", base: "1.15rem" }}
+        >
+          Vibe Search
+        </Text>
+        <Text
+          fontWeight={"600"}
+          lineHeight={"1.2"}
+          color={"#434343"}
+          mt={{md:'1rem',base:'0.5rem'}}
+          fontSize={{ md: "1.1rem", base: "0.55rem" }}
+        >
+          Stop Searching, Start Vibing.
+        </Text>
+        <Text
+          fontWeight={"600"}
+          lineHeight={"1.2"}
+          color={"#434343"}
+          fontSize={{ md: "1.1rem", base: "0.55rem" }}
+        >
+          Find your perfect outfit effortlessly <br></br>with AI-powered fashion
+          search.
+        </Text>
+        <HStack fontFamily={'Figtree, sans-serif'} my={{md:'2.5rem',base:'1.5rem'}} gap={{md:'8rem',base:'2.5rem'}} px={{md:'12rem',base:'1rem'}} boxSizing="border-box" width={'100%'}>
+          <iframe
+            width="360"
+            height="615"
+            src="https://www.youtube.com/embed/gGFm5QVsJwg?si=LIBm-M3--HA10I7g"
+            title="YouTube video player"
+            frameborder="0"
+            style={{borderRadius:'10px'}}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <VStack flex={1} gap={{md:'1.25rem',base:'0.65rem'}} textAlign={'left'} alignItems={'flex-start'}>
+            <Text
+              fontWeight={"700"}
+              lineHeight={"1.2"}
+              color={"rgba(28,28,28,1)"}
+              fontSize={{ md: "1.5rem", base: "0.65rem" }}
+            >
+              Unleash the Power of AI Search
+            </Text>
+            <Text
+              fontWeight={"400"}
+              lineHeight={"1.2"}
+              color={"rgba(28,28,28,1)"}
+              fontSize={{ md: "1rem", base: "0.5rem" }}
+            >
+              Describe what you want using natural language - "boho summer
+              dress," "Dark academia aesthetic outfits for fall," "minimal
+              office outfit," "bold office outfits for women," "dresses for a
+              summer beach party," – Vibe Search understands!
+            </Text>
+            <Text
+              fontWeight={"400"}
+              lineHeight={"1.2"}
+              color={"rgba(28,28,28,1)"}
+              fontSize={{ md: "1rem", base: "0.5rem" }}
+            >
+              See a look you love? Upload the picture and instantly discover
+              similar items.
+            </Text>
+            <Text
+              fontWeight={"400"}
+              lineHeight={"1.2"}
+              color={"rgba(28,28,28,1)"}
+              fontSize={{ md: "1rem", base: "0.5rem" }}
+            >
+              No more keyword stuffing – Vibe Search gets you there faster and
+              more accurately.
+            </Text>
+          </VStack>
+        </HStack>
+      </VStack>
     </>
   );
 };
