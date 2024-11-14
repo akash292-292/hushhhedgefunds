@@ -1,9 +1,10 @@
-import { Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import TypingGif from "../../../public/gif/typing.gif";
 import CardImage from "../../../public/images/fendiCards.png";
 import DressImage from "../../../public/images/dressImage.png";
 import Mobile from "../../../public/images/mobile.png";
+import QRImage from "../../../public/images/QRWallet.png";
 import {
   Accordion,
   AccordionItem,
@@ -502,6 +503,77 @@ const Consumers = () => {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
+
+      <HStack
+        my={{ md: "2rem", base: "1rem" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+        gap={{ md: "4rem", base: "1rem" }}
+      >
+        <Text
+          fontWeight={"700"}
+          lineHeight={"1.2"}
+          color={"rgba(28,28,28,1)"}
+          fontSize={{ md: "2rem", base: "1rem" }}
+        >
+          {" "}
+          Glimpse into Hushh Wallet{" "}
+        </Text>
+        <iframe
+          style={{ borderRadius: "15px" }}
+          width="828"
+          height="550"
+          src="https://www.youtube.com/embed/WYppPoOSi7k?si=yMlu5PUzuZhueJZm"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </HStack>
+
+      <VStack
+        my={{ md: "8rem", base: "1rem" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <HStack
+          alignItems={"center"}
+          justifyContent={"center"}
+          gap={{ md: "4rem", base: "1rem" }}
+          bg={"rgba(0,0,0,0)"}
+          mx={{ md: "6rem", base: "1rem" }}
+        >
+          <Text
+            fontWeight={"700"}
+            lineHeight={"1.2"}
+            color={"#434343"}
+            fontSize={{ md: "1.5rem", base: "0.65rem" }}
+          >
+            Hushh Wallet is more than just an app; it's a movement.
+            <br></br>
+            Download and unlock the true power of your personal data.
+          </Text>
+          <Image
+            src={QRImage}
+            alt="Hushh Wallet QR Code"
+            boxSize={{ md: "16rem", base: "100px" }}
+          />
+        </HStack>
+        <Button
+          maxW={{ md: "680px", base: "8rem" }}
+          px={"12px"}
+          bg={"rgba(153, 40, 112, 1)"}
+          color={"white"}
+          _hover={{
+          color:'white',
+          background:'black'
+          }}
+          onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeIQF0GhLxmwEHrmOpMRQVlxuJBtQYUP2oT_GQt16h8oyw2Dg/viewform', '_blank')}
+        >
+          Want to have Wallet capabilities in your brand?
+        </Button>
+      </VStack>
     </>
   );
 };
