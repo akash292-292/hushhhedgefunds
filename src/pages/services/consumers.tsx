@@ -16,6 +16,7 @@ import CardImage from "../../../public/images/fendiCards.png";
 import DressImage from "../../../public/images/dressImage.png";
 import Mobile from "../../../public/images/mobile.png";
 import QRImage from "../../../public/images/QRWallet.png";
+import Companion from "../../svg/companion.svg"
 import {
   Accordion,
   AccordionItem,
@@ -814,9 +815,60 @@ const Consumers = () => {
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
-                <Image src={BroswerCompanionImg} alt="Hushh Broswer Companion" />
-
+        <Image src={BroswerCompanionImg} alt="Hushh Broswer Companion" />
       </HStack>
+
+      <VStack
+        my={{ md: "8rem", base: "1rem" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        <HStack
+          alignItems={"center"}
+          justifyContent={"center"}
+          gap={{ md: "4rem", base: "1rem" }}
+          bg={"rgba(0,0,0,0)"}
+          textAlign={'right'}
+          mx={{ md: "6rem", base: "1rem" }}
+        >
+          <Text
+            fontWeight={"700"}
+            lineHeight={"1.2"}
+            color={"#434343"}
+            fontSize={{ md: "1.5rem", base: "0.65rem" }}
+          >
+            Ready to enhance your digital journey? Add Hushh Companion
+            <br></br>
+           to Chrome today and start exploring the web on your own
+           <br></br>
+           terms!
+          </Text>
+          <Image
+            src={Companion}
+            alt="Hushh Browser Companion"
+            boxSize={{ md: "16rem", base: "100px" }}
+          />
+        </HStack>
+        <Button
+          maxW={{ md: "680px", base: "8rem" }}
+          px={"12px"}
+          bg={"rgba(153, 40, 112, 1)"}
+          color={"white"}
+          _hover={{
+            color: "white",
+            background: "black",
+          }}
+          onClick={() =>
+            window.open(
+              "https://chromewebstore.google.com/detail/hushh-browser-companion/glmkckchoggnebfiklpbiajpmjoagjgj?authuser=0&hl=en",
+              "_blank"
+            )
+          }
+        >
+          Want to know more about Hushh Companion?
+        </Button>
+      </VStack>
+      <Divider borderWidth={"2px"} my={"1rem"} stroke={"grey"} />
     </>
   );
 };
