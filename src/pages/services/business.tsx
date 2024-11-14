@@ -534,11 +534,11 @@ VIBE Search API
 </Text>
         <Text
           color={"#434343"}
-          fontWeight={"600"}
+          fontWeight={"400"}
           lineHeight={"1.2"}
           fontSize={{ md: "1.17rem", base: "0.65rem" }}
         >
-          Delivers highly personalized search results using semantic analysis, image search, <br></br> and implicit behavior understanding. Boosts customer satisfaction, <br></br> engagement, and revenue.*
+          Delivers <span style={{fontWeight:'700'}}>highly personalized search results</span>  using <span style={{fontWeight:'700'}}>semantic analysis</span> , image search, <br></br> and  <span style={{fontWeight:'700'}}>implicit behavior understanding</span>. Boosts   <span style={{fontWeight:'700'}}>customer satisfaction, <br></br> engagement, and revenue.</span>
 
 
         </Text>
