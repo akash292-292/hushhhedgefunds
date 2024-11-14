@@ -1,4 +1,15 @@
-import { Box, Button, Divider, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  Heading,
+  HStack,
+  List,
+  ListItem,
+  Text,
+  UnorderedList,
+  VStack,
+} from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import TypingGif from "../../../public/gif/typing.gif";
 import CardImage from "../../../public/images/fendiCards.png";
@@ -13,6 +24,7 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "lucide-react";
+import BroswerCompanionImg from "../../../public/images/browserCompanion.png";
 
 const Consumers = () => {
   return (
@@ -566,15 +578,245 @@ const Consumers = () => {
           bg={"rgba(153, 40, 112, 1)"}
           color={"white"}
           _hover={{
-          color:'white',
-          background:'black'
+            color: "white",
+            background: "black",
           }}
-          onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeIQF0GhLxmwEHrmOpMRQVlxuJBtQYUP2oT_GQt16h8oyw2Dg/viewform', '_blank')}
+          onClick={() =>
+            window.open(
+              "https://docs.google.com/forms/d/e/1FAIpQLSeIQF0GhLxmwEHrmOpMRQVlxuJBtQYUP2oT_GQt16h8oyw2Dg/viewform",
+              "_blank"
+            )
+          }
         >
           Want to have Wallet capabilities in your brand?
         </Button>
       </VStack>
-      <Divider borderWidth={'2px'} my={'1rem'} stroke={'grey'}/>
+      <Divider borderWidth={"2px"} my={"1rem"} stroke={"grey"} />
+
+      <VStack
+        gap={{ md: "2rem", base: "1rem" }}
+        alignItems={"center"}
+        textAlign={"center"}
+        justifyContent={"center"}
+      >
+        <Text
+          color={"#1c1c1c"}
+          fontWeight={"700"}
+          lineHeight={"1.2"}
+          fontSize={{ md: "2.3rem", base: "1.4rem" }}
+        >
+          Hushh Companion
+        </Text>
+        <Text
+          color={"#434343"}
+          fontWeight={"600"}
+          lineHeight={"1.2"}
+          fontSize={{ md: "1.17rem", base: "0.65rem" }}
+        >
+          More than just a Chrome extension – it's your personal companion for a
+          smarter, <br></br> more organized digital life.{" "}
+        </Text>
+        <Accordion
+          allowToggle
+          minW={"80%"}
+          w="100%"
+          flexDirection="row"
+          p={{ md: "4rem", base: "1rem" }}
+          display="flex"
+          justifyContent="center"
+          gap={{ md: "6rem", base: "1rem" }}
+        >
+          <AccordionItem>
+            <Box
+              bg="purple.200"
+              p={4}
+              w={{ md: "250px", base: "150px" }}
+              h={{ md: "200px", base: "100px" }}
+              m={2}
+              textAlign="center"
+            >
+              <AccordionButton
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="center"
+                h="100%"
+              >
+                <Box
+                  as="span"
+                  flex="1"
+                  fontWeight="bold"
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  alignSelf="flex-start"
+                >
+                  Discover Your <br></br> Digital Self
+                </Box>
+                <ChevronDownIcon
+                  style={{
+                    background: "#5f6368",
+                    color: "white",
+                    borderRadius: "50%",
+                  }}
+                  stroke="white"
+                  alignSelf="flex-end"
+                />
+              </AccordionButton>
+            </Box>
+            <AccordionPanel pb={4} fontSize={{ md: "1rem", base: "0.8rem" }}>
+              <Box maxWidth="280px" mx="auto">
+                <UnorderedList spacing={3} textAlign="left">
+                  <ListItem>
+                    <strong>Track Your Browsing:</strong> Gain insights into
+                    your online behavior and interests.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Evolving Interests:</strong> Watch how your
+                    preferences change over time.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Data Control:</strong> Choose exactly what
+                    information you want to collect.
+                  </ListItem>
+                </UnorderedList>
+              </Box>
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <Box
+              bg="pink.200"
+              w={{ md: "250px", base: "150px" }}
+              h={{ md: "200px", base: "100px" }}
+              p={4}
+              m={2}
+              textAlign="center"
+            >
+              <AccordionButton
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="center"
+                h="100%"
+              >
+                <Box
+                  as="span"
+                  flex="1"
+                  fontWeight="bold"
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  alignSelf="flex-start"
+                >
+                  Shop Smarter, <br></br> Not Harder
+                </Box>
+                <ChevronDownIcon
+                  style={{
+                    background: "#5f6368",
+                    color: "white",
+                    borderRadius: "50%",
+                  }}
+                  stroke="white"
+                  alignSelf="flex-end"
+                />
+              </AccordionButton>
+            </Box>
+            <AccordionPanel pb={4} fontSize={{ md: "1rem", base: "0.8rem" }}>
+              <Box maxWidth="280px" mx="auto">
+                <UnorderedList spacing={3} textAlign="left">
+                  <ListItem>
+                    <strong>Cross-Brand Shopping Cart: </strong> Compare
+                    products across different websites with ease.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Curated Collections: </strong> Save and organize
+                    products you love.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Link Library:</strong> Keep all your favorite
+                    content just a click away.
+                  </ListItem>
+                </UnorderedList>
+              </Box>
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <Box
+              bg="pink.300"
+              w={{ md: "250px", base: "150px" }}
+              h={{ md: "200px", base: "100px" }}
+              p={4}
+              m={2}
+              textAlign="center"
+            >
+              <AccordionButton
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
+                alignItems="center"
+                h="100%"
+              >
+                <Box
+                  as="span"
+                  flex="1"
+                  fontWeight="bold"
+                  fontSize={{ md: "1.5rem", base: "1rem" }}
+                  alignSelf="flex-start"
+                >
+                  Your Data, <br></br> Your Way
+                </Box>
+                <ChevronDownIcon
+                  style={{
+                    background: "#5f6368",
+                    color: "white",
+                    borderRadius: "50%",
+                  }}
+                  stroke="white"
+                  alignSelf="flex-end"
+                />
+              </AccordionButton>
+            </Box>
+            <AccordionPanel pb={4} fontSize={{ md: "1rem", base: "0.8rem" }}>
+              <Box maxWidth="280px" mx="auto">
+                <UnorderedList spacing={3} textAlign="left">
+                  <ListItem>
+                    <strong>Personal Insights:</strong> Understand your digital
+                    footprint like never before.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Data Portability:</strong> Easily export your
+                    information for personal use.
+                  </ListItem>
+                  <ListItem>
+                    <strong>Future-Ready: </strong> Coming soon - Hushh Wallet
+                    for secure, consensual data monetization.
+                  </ListItem>
+                </UnorderedList>
+              </Box>
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
+      </VStack>
+
+
+ <HStack
+        my={{ md: "2rem", base: "1rem" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+        gap={{ md: "4rem", base: "1rem" }}
+      >
+       <iframe
+          style={{ borderRadius: "15px" }}
+          width="728"
+          height="550"
+          src="https://www.youtube.com/embed/371l4LVRcwo?si=RcUlPxi17GAUWJLS"
+          title="Hushh Browser Companion"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+                <Image src={BroswerCompanionImg} alt="Hushh Broswer Companion" />
+
+      </HStack>
     </>
   );
 };
