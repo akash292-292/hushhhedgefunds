@@ -46,6 +46,7 @@ const Consumers = () => {
           fontSize={{ md: "1.25rem", base: "0.65rem" }}
           as={"h1"}
           color={"rgba(61,61,145,1)"}
+          mt={{md:'4rem',base:'2rem'}}
         >
           For Consumers
         </Heading>
@@ -174,6 +175,7 @@ const Consumers = () => {
 
       <HStack
         bg={"#D9D2E9"}
+                  px={{md:'10rem',base:'0'}}
         mt={{ md: "3rem", base: "1rem" }}
         gap={{ md: "6rem", base: "1rem" }}
         padding={{ md: "2rem", base: "0.5" }}
@@ -201,13 +203,13 @@ const Consumers = () => {
               top: 0,
               left: 0,
               width: "100%",
-              height: "75%",
+              height: "85%",
             }}
           ></iframe>
         </Box>
 
         <Box
-          maxW={{ md: "35rem", base: "100%" }}
+          // maxW={{ md: "35rem", base: "100%" }}
           p={4}
           textAlign={"left"}
           display={"flex"}
