@@ -1,4 +1,4 @@
-import { Box, Button, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Divider, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import TypingGif from "../../../public/gif/typing.gif";
 import CardImage from "../../../public/images/fendiCards.png";
@@ -574,6 +574,7 @@ const Consumers = () => {
           Want to have Wallet capabilities in your brand?
         </Button>
       </VStack>
+      <Divider borderWidth={'2px'} my={'1rem'} stroke={'grey'}/>
     </>
   );
 };
