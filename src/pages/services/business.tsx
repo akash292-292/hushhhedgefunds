@@ -1,7 +1,7 @@
 import { HStack, VStack,  Box, Text, Image, Heading  } from '@chakra-ui/react'
 import React from 'react'
 
-const Businesses = () => {
+const Business = () => {
   return (
     <>
       <Box
@@ -150,4 +150,4 @@ const Businesses = () => {
   )
 }
 
-export default Businesses
+export default Business

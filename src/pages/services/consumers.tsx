@@ -22,7 +22,6 @@ import {
   AccordionItem,
   AccordionButton,
   AccordionPanel,
-  AccordionIcon,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "lucide-react";
 import BroswerCompanionImg from "../../../public/images/browserCompanion.png";
