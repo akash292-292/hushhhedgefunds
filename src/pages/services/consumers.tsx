@@ -949,6 +949,93 @@ const Consumers = () => {
           </VStack>
         </HStack>
       </VStack>
+
+      <HStack my={{ md: "2rem", base: "1rem" }} px={{md:'12rem',base:'0.5rem'}}>
+        <VStack textAlign={'left'} alignItems={'flex-start'} justifyContent={'flex-start'}>
+          <Text fontWeight={'700'} lineHeight={'1.2'} color={'rgba(153,40,112,1)'} fontSize={{md:'1.5rem',base:'0.75rem'}}>Try Vibe Search Now</Text>
+          <Text mt={{md:'1.5rem',base:'0.5rem'}} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={'1.2'}>Example Queries: </Text>
+          <UnorderedList gap={{md:'1rem',base:'0.5rem'}} display={'flex'} flexDirection={'column'} fontWeight={'400'} fontSize={{md:'1rem',base:'0.5rem'}} lineHeight={'1.2'}>
+             <ListItem>Boho Summer Dress</ListItem>
+             <ListItem>Casual Summer Dress</ListItem>
+             <ListItem>Minimal Office Outfit</ListItem>
+             <ListItem>Bold Office Outfits for Women</ListItem>
+             <ListItem>Dresses for a Summer Beach Party</ListItem>
+             <ListItem>Ball Dresses</ListItem>
+             <ListItem>Streetwear for Men</ListItem>
+             <ListItem>Floral and Striped Dresses</ListItem>
+          </UnorderedList>
+        </VStack>
+
+
+      </HStack>
+ <HStack fontFamily={'Figtree, sans-serif'} my={{md:'2.5rem',base:'1.5rem'}} gap={{md:'14rem',base:'2.5rem'}} px={{md:'12rem',base:'1rem'}} boxSizing="border-box" width={'100%'}>
+          <iframe
+            width="360"
+            height="615"
+            src="https://www.youtube.com/embed/4tH9j6kIQ0Q?si=3kp9oBbXRdh7Ewab" 
+            title="YouTube video player"
+            frameborder="0"
+            style={{borderRadius:'10px'}}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <VStack flex={1} gap={{md:'1.25rem',base:'0.65rem'}} textAlign={'left'} alignItems={'flex-start'}>
+            <Text
+              fontWeight={"700"}
+              lineHeight={"1.2"}
+              color={"rgba(28,28,28,1)"}
+              fontSize={{ md: "1.5rem", base: "0.65rem" }}
+            >
+              Personalization That Gets You
+            </Text>
+            <Text
+              fontWeight={"400"}
+              lineHeight={"1.2"}
+              color={"rgba(28,28,28,1)"}
+              fontSize={{ md: "1rem", base: "0.5rem" }}
+            >
+              <span style={{fontWeight:'700'}}>Your Style, Your Feed:</span> Vibe Search learns what you love. The more you interact, the more tailored your results become.
+            </Text>
+            <Text
+              fontWeight={"400"}
+              lineHeight={"1.2"}
+              color={"rgba(28,28,28,1)"}
+              fontSize={{ md: "1rem", base: "0.5rem" }}
+            >
+              <span style={{fontWeight:'700'}}>Effortless Discovery:</span> Just browse and like products – Vibe Search personalizes your experience automatically.
+            </Text>
+            <Text
+              fontWeight={"400"}
+              lineHeight={"1.2"}
+              color={"rgba(28,28,28,1)"}
+              fontSize={{ md: "1rem", base: "0.5rem" }}
+            >
+              <span style={{fontWeight:'700'}}>Control Your Style Journey: </span>Soon you'll be able to fine-tune your preferences for ultimate control.
+            </Text>
+          </VStack>
+        </HStack>
+
+        <VStack my={{md:'2rem',base:'1rem'}} textAlign={'center'} gap={{md:'2rem',base:'1rem'}}>
+          <Text fontFamily={'Figtree, Arial'} color={'#434343'} fontSize={{md:'1.5rem',base:'0.75rem'}} fontWeight={'600'}>Ready to find your perfect fashion match? Start vibing with Vibe <br></br> Search today!</Text>
+           <Button
+          maxW={{ md: "680px", base: "8rem" }}
+          px={"12px"}
+          bg={"rgba(153, 40, 112, 1)"}
+          color={"white"}
+          _hover={{
+            color: "white",
+            background: "black",
+          }}
+          onClick={() =>
+            window.open(
+              "https://docs.google.com/forms/d/e/1FAIpQLSeIQF0GhLxmwEHrmOpMRQVlxuJBtQYUP2oT_GQt16h8oyw2Dg/viewform",
+              "_blank"
+            )
+          }
+        >Schedule a demo to know more about Vibe Search
+        </Button>
+        </VStack>
     </>
   );
 };
