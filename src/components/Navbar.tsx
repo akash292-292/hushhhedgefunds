@@ -52,6 +52,39 @@ export default function Navbar() {
                 </Menu.Item>
               </Menu.Items>
             </Menu>
+
+             {/* New Dropdown for Solution */}
+            <Menu as="div" className="relative">
+              <Menu.Button className="px-3 py-2 text-gray-700 hover:text-gray-900">
+                Solution
+              </Menu.Button>
+              <Menu.Items className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
+                <Menu.Item>
+                  {({ active }) => (
+                    <Link
+                      to="/services/consumers"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      For Consumers
+                    </Link>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <Link
+                      to="/services/businesses"
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
+                    >
+                      For Businesses
+                    </Link>
+                  )}
+                </Menu.Item>
+              </Menu.Items>
+            </Menu>
             
             {/* External link with window.open for Careers */}
             <button
