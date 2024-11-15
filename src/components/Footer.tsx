@@ -9,14 +9,14 @@ export default function Footer() {
             <p>1021 5th St W,Kirkland, WA 98033</p>
             <p>+1 (765) 532-4284</p>
           </div>
-          <div>
+          {/* <div>
             <div className="flex space-x-4">
               <a href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</a>
               <a href="/eu-gdpr" className="hover:text-gray-300">EU GDPR Policy</a>
               <a href="/brokercheck" className="hover:text-gray-300">FINRA's BrokerCheck</a>
               <a href="/support" className="hover:text-gray-300">Support</a>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mt-8 text-sm text-gray-400">
           <p>© 2024 Hushh 🤫 Technologies LLC. All Rights Reserved.</p>
