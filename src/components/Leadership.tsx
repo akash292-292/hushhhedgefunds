@@ -5,7 +5,7 @@ export default function Leadership() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <p className="text-lg md:text-xl mb-4">Welcome to Hu$$h 🤫 Technologies LLC, meet</p>
+        <p className="text-lg md:text-xl mb-4">Welcome to Hu$$h 🤫 Technologies LLC</p>
         <h1 className="text-3xl md:text-4xl font-bold mb-6">Our Leadership Team</h1>
         <p className="text-base md:text-lg mb-4">
           At Hu$$h 🤫 Technologies LLC, our leadership team combines decades of experience
