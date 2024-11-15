@@ -54,7 +54,7 @@ export default function Navbar() {
             </Menu>
 
              {/* New Dropdown for Solution */}
-            <Menu as="div" className="relative">
+            {/* <Menu as="div" className="relative">
               <Menu.Button className="px-3 py-2 text-gray-700 hover:text-gray-900">
                 Solution
               </Menu.Button>
@@ -84,7 +84,7 @@ export default function Navbar() {
                   )}
                 </Menu.Item>
               </Menu.Items>
-            </Menu>
+            </Menu> */}
             
             {/* External link with window.open for Careers */}
             <button
