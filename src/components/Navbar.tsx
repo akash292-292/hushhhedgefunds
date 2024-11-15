@@ -64,7 +64,7 @@ export default function Navbar() {
             </Menu>
 
             {/* Solution Dropdown */}
-            <Menu as="div" className="relative">
+            {/* <Menu as="div" className="relative">
               <Menu.Button className="px-3 py-2 text-gray-700 hover:text-gray-900">
                 Solution
               </Menu.Button>
@@ -90,7 +90,7 @@ export default function Navbar() {
                   )}
                 </Menu.Item>
               </Menu.Items>
-            </Menu>
+            </Menu> */}
 
             {/* Careers Link */}
             <button onClick={openInNewTab} className="px-3 py-2 text-gray-700 hover:text-gray-900">
