@@ -7,7 +7,11 @@ export default async function emailLogin(email: string, password: string) {
       password: password,
     })
     .then((response) => {
-      console.log(response);
-      window.location.href = resources.config.redirect_url;
+      if (response.error) {
+        console.error(response.error);
+      } else {
+        localStorage.setItem('isLoggedIn', 'true'); // Set login state
+        window.location.href = resources.config.redirect_url;
+      }
     });
 }
