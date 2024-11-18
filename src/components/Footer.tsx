@@ -45,12 +45,14 @@ export default function Footer() {
               >
                 Strategy and Profit Projection
               </a>
-              <a href="/privacy-policy" className="hover:text-gray-600">Privacy Policy</a>
-              <a href="#" className="hover:text-gray-600">Portfolio and Performance</a>
-              <a href="/brokercheck" className="hover:text-gray-600">Investor Relations</a>
-              <a href="/support" className="hover:text-gray-600">Compliance & Legal</a>
-              <a href="/support" className="hover:text-gray-600">Letter to Shareholders</a>
-              <a href="/support" className="hover:text-gray-600">FAQs</a>
+              {/* <a href="/privacy-policy" className="hover:text-gray-600">Privacy Policy</a> */}
+              {/* <a href="#" className="hover:text-gray-600">Portfolio and Performance</a> */}
+              {/* <a href="/brokercheck" className="hover:text-gray-600">Investor Relations</a> */}
+              {/* <a href="/support" className="hover:text-gray-600">Compliance & Legal</a> */}
+              <a href="/support" className="hover:text-gray-600"
+                              onClick={() => handleDownload('../../public/letter_to_shareholder.pdf')}
+                              >Letter to Shareholders</a>
+              <a href="/faq" className="hover:text-gray-600">FAQs</a>
             </div>
           </div>
         </div>
