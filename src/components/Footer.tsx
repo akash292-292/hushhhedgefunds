@@ -1,4 +1,25 @@
+import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Footer() {
+  // Check if the user is logged in
+  const isLoggedIn = typeof window !== 'undefined' && localStorage.getItem('isLoggedIn') === 'true';
+
+  // Function to handle PDF download
+  const handleDownload = (pdfPath: any) => {
+    if (isLoggedIn) {
+      // Trigger download if the user is logged in
+      const link = document.createElement('a');
+      link.href = pdfPath;
+      link.download = pdfPath.split('/').pop();
+      link.click();
+    } else {
+      // Show toast notification if not logged in
+      toast.error('Please log in first to access this content.');
+    }
+  };
+
   return (
     <footer className="bg-white text-black mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-8">
@@ -6,17 +27,29 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">USA</h3>
             <p>Hushh 🤫 Technologies LLC</p>
-            <p>1021 5th St W,Kirkland, WA 98033</p>
+            <p>1021 5th St W, Kirkland, WA 98033</p>
             <p>+1 (765) 532-4284</p>
           </div>
           <div className="text-left flex items-end justify-end">
-            <div className="flex text-sm space-x-6 space-y-2 text-gray-400 flex-col text-right" >
-              <a href="/privacy-policy" className="hover:text-gray-600">History and Milestones</a>
-              <a href="/eu-gdpr" className="hover:text-gray-600">Portfolio and Performance</a>
+            <div className="flex text-sm space-x-6 space-y-2 text-gray-400 flex-col text-right">
+              {/* Updated Links with download functionality */}
+              <a
+                onClick={() => handleDownload('../../public/History_and_Milestone.pdf')}
+                className="hover:text-gray-600 cursor-pointer"
+              >
+                History and Milestones
+              </a>
+              <a
+                onClick={() => handleDownload('../../public/Strategy_and_Profit_Projection.pdf')}
+                className="hover:text-gray-600 cursor-pointer"
+              >
+                Strategy and Profit Projection
+              </a>
+              <a href="/privacy-policy" className="hover:text-gray-600">Privacy Policy</a>
+              <a href="#" className="hover:text-gray-600">Portfolio and Performance</a>
               <a href="/brokercheck" className="hover:text-gray-600">Investor Relations</a>
               <a href="/support" className="hover:text-gray-600">Compliance & Legal</a>
-              <a href="/support" className="hover:text-gray-600">Strategy and Profit Projection</a>
-              <a href="/support" className="hover:text-gray-600">Letter to shareholders</a>
+              <a href="/support" className="hover:text-gray-600">Letter to Shareholders</a>
               <a href="/support" className="hover:text-gray-600">FAQs</a>
             </div>
           </div>
@@ -30,6 +63,8 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      {/* Toast Notification Container */}
+      <ToastContainer position="top-right" autoClose={3000} />
     </footer>
   );
 }
