@@ -1,75 +1,103 @@
 import img from '../../files/img.png';
 import img2 from '../../files/img (1).png';
+import lineGraph from '../../files/lineGraph.svg';
 
 export default function Leadership() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <div className="text-center mb-12">
-        <p className="text-lg md:text-xl mb-4">Welcome to Hu$$h 🤫 Technologies LLC</p>
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Our Leadership Team</h1>
-        <p className="text-base md:text-lg mb-4">
-          At Hu$$h 🤫 Technologies LLC, our leadership team combines decades of experience
-          in <span className="text-red-600">technology, finance,</span> and <span className="text-red-600">AI</span> to bring a unique, data-driven approach to investment management.
-        </p>
-        <p className="text-base md:text-lg">
-          We're united by a shared vision: to empower individuals and institutions to achieve
-          lasting financial success through intelligent, responsible investing.
-        </p>
-      </div>
+    <>
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* About Us Section */}
+        <div className="text-center mb-16">
+          <h1 className="text-3xl md:text-4xl font-bold mb-6">About Us</h1>
+          <p className="text-lg md:text-xl font-semibold mb-4">
+            Empowering Wealth Creation with Integrity and Innovation
+          </p>
+          <p className="text-base md:text-lg mb-8">
+            We blend quantitative expertise with ethical investment practices to deliver personalized financial solutions.
+          </p>
+        </div>
 
-      <div className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Meet the minds behind Hu$$h</h2>
-        
-        {/* Manish Sainani */}
-        <div className="mb-16 flex flex-col items-center text-center">
-          <div className="w-36 h-36 md:w-48 md:h-48 mb-6 bg-gray-200 rounded-full overflow-hidden">
-            <img src={img} alt="Manish Sainani" className="w-full h-full object-cover" />
+        {/* Our Mission Section */}
+        <section className="text-center mb-16">
+          <h1 className="text-2xl md:text-3xl font-bold mb-4">Our Mission</h1>
+          <h2 className='text-xl md:text-2xl font-semibold mb-4'>Innovative Strategies, Proven Results
+          </h2>
+          <ul className="list-disc list-inside text-left mx-auto max-w-3xl">
+            <li className="mb-4">Cutting-edge AI-powered insights for smarter investments.</li>
+            <li className="mb-4">Proprietary options-based strategies generating consistent income.</li>
+            <li className="mb-4">Focused investments in cash-generating giants like Apple and Microsoft.</li>
+            <li>Generating "rental income" through advanced options models.</li>
+          </ul>
+        </section>
+
+        {/* Unique Approach Section */}
+        <section className="text-center mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">Unique Approach to Investment Management</h2>
+          <p className="text-base md:text-lg mb-8">
+            At <span className="font-semibold">Hu$$h 🤫 Technologies</span>, we combine the art of investment with the science of technology:
+          </p>
+          <ul className="list-disc list-inside text-left mx-auto max-w-3xl">
+            <li className="mb-4">
+              <strong>Differentiation in Investment Approach:</strong> Unlike traditional funds that rely on speculative returns, Hu$$h combines high-frequency options income with disciplined, data-driven long-term growth. We prioritize stability, focusing on high-FCF SPX10 companies that represent the backbone of global markets.
+            </li>
+            <li className="mb-4">
+              <strong>Math-Driven Decision Making:</strong> Every strategy is informed by rigorous quantitative analysis, ensuring precision and accuracy.
+            </li>
+            <li className="mb-4">
+              <strong>AI-Powered Insights:</strong> Leveraging the latest advancements in machine learning, we identify market inefficiencies and capitalize on opportunities in real-time.
+            </li>
+            <li className="mb-4">
+              <strong>Long-Term Stability:</strong> Our investments focus on high-quality, cash-generating businesses, ensuring a balance between growth and reliability.
+            </li>
+            <li>
+              <strong>Transparency You Can Trust:</strong> Clear communication and a human-centric approach to wealth creation.
+            </li>
+          </ul>
+        </section>
+
+        {/* Our Leadership Team Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12">Our Leadership Team</h2>
+          <h3 className='text-md md:text-xl font-semibold mb-12'>
+            At Hu$$h 🤫 Technologies LLC, our leadership team combines expertise in technology, finance, and strategy to redefine wealth creation. Together, they bring innovation, precision, and integrity to every investment decision.</h3>
+          {/* Manish Sainani */}
+          <div className="mb-16 flex flex-col items-center text-center">
+            <div className="w-36 h-36 md:w-48 md:h-48 mb-6 bg-gray-200 rounded-full overflow-hidden">
+              <img src={img} alt="Manish Sainani" className="w-full h-full object-cover" />
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-1">Manish <span className="text-red-600">Sainani</span></h3>
+            <p className="text-gray-600 mb-4">Founder & CEO</p>
+            <p className="text-md text-gray-700 mb-4">
+              With over a decade of leadership at Google, Microsoft, and Splunk, Manish brings unmatched expertise in AI, machine learning, and data-driven innovation. His vision drives Hu$$h’s mission to empower investors with sustainable, technology-powered wealth strategies.
+            </p>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold mb-1">Manish <span className="text-red-600">Sainani</span></h3>
-          <p className="text-gray-600 mb-4">Founder & CEO</p>
-          <p className="text-lg md:text-xl mb-2">Visionary. Innovator. Builder.</p>
-          <p className="text-gray-700 text-sm md:text-base mb-4">
-            Manish founded Hu$$h 🤫 Technologies LLC with a bold vision: to transform the investment
-            landscape through the power of technology and data-driven insights.
-          </p>
-          <p className="text-gray-700 text-sm md:text-base mb-4">
-            His deep understanding of AI and machine learning, honed over a decade of leadership at
-            Google, Microsoft, and Splunk, provides Hu$$h with an unparalleled advantage in identifying
-            market opportunities and managing risk.
-          </p>
-          <p className="text-gray-700 text-sm md:text-base">
-            Driven by an insatiable intellectual curiosity and a commitment to first principles, Manish leads
-            Hu$$h with a unique blend of analytical precision and a human-centric approach.
-          </p>
-        </div>
 
-        {/* Justin Donaldson */}
-        <div className="mb-16 flex flex-col items-center text-center">
-          <div className="w-36 h-36 md:w-48 md:h-48 mb-6 bg-gray-200 rounded-full overflow-hidden">
-            <img src={img2} alt="Justin Donaldson" className="w-full h-full object-cover" />
+          {/* Justin Donaldson */}
+          <div className="mb-16 flex flex-col items-center text-center">
+            <div className="w-36 h-36 md:w-48 md:h-48 mb-6 bg-gray-200 rounded-full overflow-hidden">
+              <img src={img2} alt="Justin Donaldson" className="w-full h-full object-cover" />
+            </div>
+            <h3 className="text-xl md:text-2xl font-bold mb-1">Justin <span className="text-red-600">Donaldson</span></h3>
+            <p className="text-gray-600 mb-4">Chief Scientist & Investment Strategist</p>
+            <p className="text-md text-gray-700">
+              Justin leads Hu$$h’s scientific and strategic investment approaches. As the architect behind proprietary options strategies like "Sell the Wall," he uses advanced quantitative models to deliver consistent, risk-optimized returns.
+            </p>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold mb-1">Justin <span className="text-red-600">Donaldson</span></h3>
-          <p className="text-gray-600 mb-4">Chief Scientist, Advisor to CEO, & Investment Strategist</p>
-          <p className="text-lg md:text-xl mb-2">Strategist. Scientist. Architect.</p>
-          <p className="text-gray-700 text-sm md:text-base mb-4">
-            Justin is the driving force behind Hu$$h's investment methodologies. As Chief Scientist and
-            Advisor to the CEO, he brings a wealth of experience in quantitative finance, data science, and AI.
-          </p>
-          <p className="text-gray-700 text-sm md:text-base">
-            His comprehensive understanding of market dynamics, combined with his innovative approach,
-            helps Hu$$h generate sustainable returns while adhering to core values of transparency and efficiency.
-          </p>
         </div>
 
-        <div className="text-center mt-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Together, Creating the Future of <span className="text-red-600">Wealth Management</span></h2>
-          <p className="text-gray-700 text-sm md:text-base">
-            Manish and Justin lead Hu$$h 🤫 Technologies LLC with a shared purpose: to build an investment firm that seamlessly
-            blends mathematical sophistication with ethical clarity. Their combined expertise and unwavering vision allow Hu$$h to
-            explore new frontiers in investment management.
+        {/* Footer Section */}
+        <section className="text-center mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Join <span className="text-red-600">Us</span></h2>
+          <p className="text-base md:text-lg mb-8">
+            Whether you're an individual or an institution, Hu$$h 🤫 Technologies LLC invites you to join us on our journey.
           </p>
-        </div>
+          <div className="flex justify-center">
+            <a href="https://hushhtechnologies.netlify.app/Login" className="text-red-600 hover:text-red-700 flex items-center">
+              Know more about us <span className="ml-2">→</span>
+            </a>
+          </div>
+        </section>
       </div>
-    </div>
+    </>
   );
 }

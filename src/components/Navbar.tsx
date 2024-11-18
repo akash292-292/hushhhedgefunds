@@ -35,33 +35,12 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6">
             {/* About Dropdown */}
-            <Menu as="div" className="relative">
-              <Menu.Button className="px-3 py-2 text-gray-700 hover:text-gray-900">
-                About
-              </Menu.Button>
-              <Menu.Items className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
+            <Link
                       to="/about/leadership"
-                      className={`${active ? 'bg-gray-100' : ''} block px-4 py-2 text-sm text-gray-700`}
+                      className="bg-gray-100' block px-4 py-2 text-sm text-gray-700"
                     >
-                      Leadership Team
+                     About Us
                     </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <Link
-                      to="/about/philosophy"
-                      className={`${active ? 'bg-gray-100' : ''} block px-4 py-2 text-sm text-gray-700`}
-                    >
-                      About Organization
-                    </Link>
-                  )}
-                </Menu.Item>
-              </Menu.Items>
-            </Menu>
 
             {/* Solution Dropdown */}
             {/* <Menu as="div" className="relative">
@@ -129,13 +108,7 @@ export default function Navbar() {
               </Link>
 
               {/* About Dropdown */}
-              <Menu as="div">
-                <Menu.Button className="block text-lg font-semibold text-gray-700">
-                  About
-                </Menu.Button>
-                <Menu.Items className="bg-gray-100 mt-2 rounded-md shadow-lg">
-                  <Menu.Item>
-                    {({ active }) => (
+             
                       <Link
                         to="/about/leadership"
                         onClick={toggleDrawer}
@@ -143,21 +116,6 @@ export default function Navbar() {
                       >
                         Leadership Team
                       </Link>
-                    )}
-                  </Menu.Item>
-                  <Menu.Item>
-                    {({ active }) => (
-                      <Link
-                        to="/about/philosophy"
-                        onClick={toggleDrawer}
-                        className={`${active ? 'bg-gray-200' : ''} block px-4 py-2`}
-                      >
-                        About Organization
-                      </Link>
-                    )}
-                  </Menu.Item>
-                </Menu.Items>
-              </Menu>
 
               {/* Solution Dropdown */}
               {/* <Menu as="div">
