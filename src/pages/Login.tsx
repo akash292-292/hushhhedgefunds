@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Eye, EyeOff, BarChart } from "lucide-react";
-import services from "../services/services"
+import services from "../services/services";
+import GoogleIcon from "../svg/googleIcon.svg";
+import { Image } from "@chakra-ui/react";
+
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -75,18 +78,19 @@ export default function Login() {
               type="submit"
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               onClick={() => {
-               services.authentication.emailLogin(email, password);
+                services.authentication.emailLogin(email, password);
               }}
             >
               Log in
             </button>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              className="w-full gap-4 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-700 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               onClick={() => {
-               services.authentication.googleSignIn();
+                services.authentication.googleSignIn();
               }}
             >
+              <Image src={GoogleIcon} alt="Google Sign In" />
               Google Sign In
             </button>
 
