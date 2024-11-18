@@ -16,7 +16,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-900 via-purple-900 to-purple-800">
+    <div className="min-h-screen bg-black">
       <div className="container mx-auto px-6 py-8">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center mb-16">
@@ -76,7 +76,7 @@ export default function Login() {
 
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               onClick={() => {
                 services.authentication.emailLogin(email, password);
               }}
@@ -85,7 +85,7 @@ export default function Login() {
             </button>
             <button
               type="submit"
-              className="w-full gap-4 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-700 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              className="w-full flex justify-center gap-4 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               onClick={() => {
                 services.authentication.googleSignIn();
               }}
