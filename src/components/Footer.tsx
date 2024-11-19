@@ -20,13 +20,13 @@ export default function Footer() {
   // Function to handle PDF download
   const handleDownload = (pdfPath: any) => {
     if (isLoggedIn) {
-      // Trigger download if the user is logged in
+    
       const link = document.createElement("a");
       link.href = pdfPath;
       link.download = pdfPath.split("/").pop();
       link.click();
     } else {
-      // Show toast notification if not logged in
+    
       toast.error("Please log in first to access this content.");
     }
   };
