@@ -21,7 +21,9 @@ export default function Signup() {
         setError(error.message);
         setSuccess(null);
       } else {
-        setSuccess("Signup successful! Please check your email for confirmation.");
+        setSuccess(
+          "Signup successful! Please check your email for confirmation."
+        );
         setError(null);
       }
     } catch (err) {
@@ -36,7 +38,10 @@ export default function Signup() {
         <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
         <form onSubmit={handleSignup} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email
             </label>
             <input
@@ -49,7 +54,10 @@ export default function Signup() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
               Password
             </label>
             <input
@@ -66,7 +74,7 @@ export default function Signup() {
           <button
             type="submit"
             className="w-full flex justify-center gap-4 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-            >
+          >
             Sign Up
           </button>
         </form>

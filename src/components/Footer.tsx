@@ -1,22 +1,33 @@
-import { useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import services from "../services/services";
 
 export default function Footer() {
   // Check if the user is logged in
-  const isLoggedIn = typeof window !== 'undefined' && localStorage.getItem('isLoggedIn') === 'true';
+  let [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  useEffect(() => {
+    setTimeout(async () => {
+      isLoggedIn
+        ? ""
+        : setIsLoggedIn(await services.authentication.isLoggedIn(null));
+    }, 10);
+  }, []);
 
+  useEffect(() => {
+    console.log(isLoggedIn);
+  }, [isLoggedIn]);
   // Function to handle PDF download
   const handleDownload = (pdfPath: any) => {
     if (isLoggedIn) {
       // Trigger download if the user is logged in
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = pdfPath;
-      link.download = pdfPath.split('/').pop();
+      link.download = pdfPath.split("/").pop();
       link.click();
     } else {
       // Show toast notification if not logged in
-      toast.error('Please log in first to access this content.');
+      toast.error("Please log in first to access this content.");
     }
   };
 
@@ -34,13 +45,19 @@ export default function Footer() {
             <div className="flex text-sm space-x-6 space-y-2 text-gray-400 flex-col text-right">
               {/* Updated Links with download functionality */}
               <a
-                onClick={() => handleDownload('../../public/History_and_Milestone.pdf')}
+                onClick={() =>
+                  handleDownload("../../public/History_and_Milestone.pdf")
+                }
                 className="hover:text-gray-600 cursor-pointer"
               >
                 History and Milestones
               </a>
               <a
-                onClick={() => handleDownload('../../public/Strategy_and_Profit_Projection.pdf')}
+                onClick={() =>
+                  handleDownload(
+                    "../../public/Strategy_and_Profit_Projection.pdf"
+                  )
+                }
                 className="hover:text-gray-600 cursor-pointer"
               >
                 Strategy and Profit Projection
@@ -49,19 +66,29 @@ export default function Footer() {
               {/* <a href="#" className="hover:text-gray-600">Portfolio and Performance</a> */}
               {/* <a href="/brokercheck" className="hover:text-gray-600">Investor Relations</a> */}
               {/* <a href="/support" className="hover:text-gray-600">Compliance & Legal</a> */}
-              <a href="/support" className="hover:text-gray-600"
-                              onClick={() => handleDownload('../../public/letter_to_shareholder.pdf')}
-                              >Letter to Shareholders</a>
-              <a href="/faq" className="hover:text-gray-600">FAQs</a>
+              <a
+                href="/support"
+                className="hover:text-gray-600"
+                onClick={() =>
+                  handleDownload("../../public/letter_to_shareholder.pdf")
+                }
+              >
+                Letter to Shareholders
+              </a>
+              <a href="/faq" className="hover:text-gray-600">
+                FAQs
+              </a>
             </div>
           </div>
         </div>
         <div className="mt-8 text-sm text-gray-400">
           <p>© 2024 Hushh 🤫 Technologies LLC. All Rights Reserved.</p>
           <p className="mt-2">
-            The materials on this website are for illustration and discussion purposes only and do not constitute an offering.
-            An offering may be made only by delivery of a confidential offering memorandum to appropriate investors.
-            PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.
+            The materials on this website are for illustration and discussion
+            purposes only and do not constitute an offering. An offering may be
+            made only by delivery of a confidential offering memorandum to
+            appropriate investors. PAST PERFORMANCE IS NO GUARANTEE OF FUTURE
+            RESULTS.
           </p>
         </div>
       </div>
