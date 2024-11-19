@@ -4,19 +4,31 @@ import { Eye, EyeOff, BarChart } from "lucide-react";
 import services from "../services/services";
 import GoogleIcon from "../svg/googleIcon.svg";
 import { Image } from "@chakra-ui/react";
-
+import { notification } from "antd";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [api, contextHolder] = notification.useNotification();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
   };
-
+  const openNotification = (
+    description: string,
+    message: string,
+    duration: number
+  ) => {
+    api.open({
+      message: message,
+      description: description,
+      duration: duration,
+    });
+  };
   return (
     <div className="min-h-screen bg-black">
+      {contextHolder}
       <div className="container mx-auto px-6 py-8">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-center mb-16">
@@ -77,8 +89,18 @@ export default function Login() {
             <button
               type="submit"
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-              onClick={() => {
-                services.authentication.emailLogin(email, password);
+              onClick={async () => {
+                let response = await services.authentication.emailLogin(
+                  email,
+                  password
+                );
+                if (response == "error") {
+                  openNotification(
+                    "Invalid Credentials, Please try again",
+                    "Error",
+                    0
+                  );
+                }
               }}
             >
               Log in
@@ -95,9 +117,9 @@ export default function Login() {
             </button>
 
             <div className="text-sm text-center">
-            <a href="#" className="text-black hover:text-red-800 underline">
-  Forgot password
-</a>
+              <a href="#" className="text-black hover:text-red-800 underline">
+                Forgot password
+              </a>
             </div>
           </form>
 
