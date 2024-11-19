@@ -1,7 +1,6 @@
 {
   "files": [
-    "src/components",
-    "src/custom.d.ts"
+    "custom.d.ts"
   ],
   "references": [
     {
