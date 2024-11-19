@@ -67,7 +67,6 @@ export default function Footer() {
               {/* <a href="/brokercheck" className="hover:text-gray-600">Investor Relations</a> */}
               {/* <a href="/support" className="hover:text-gray-600">Compliance & Legal</a> */}
               <a
-                href="/support"
                 className="hover:text-gray-600"
                 onClick={() =>
                   handleDownload("../../public/letter_to_shareholder.pdf")
