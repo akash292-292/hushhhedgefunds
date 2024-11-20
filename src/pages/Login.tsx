@@ -117,11 +117,11 @@ export default function Login() {
               Google Sign In
             </button>
 
-            <div className="text-sm text-center">
+            {/* <div className="text-sm text-center">
               <a href="#" className="text-black hover:text-red-800 underline">
                 Forgot password
               </a>
-            </div>
+            </div> */}
           </form>
 
           <div className="mt-8 space-y-4">

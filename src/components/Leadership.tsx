@@ -91,7 +91,8 @@ export default function Leadership() {
           Whether you're an individual or an institution, Hu$$h 🤫 Technologies LLC invites you to join us on our journey.
         </p>
         <div className="flex justify-center">
-          <a href="https://hushhtechnologies.netlify.app/Login" className="text-red-600 hover:text-red-700 flex items-center">
+          <a href="https://hushhtechnologies.netlify.app/Login"  target="_blank"
+  rel="noopener noreferrer" className="text-red-600 hover:text-red-700 flex items-center">
             Know more about us <span className="ml-2">→</span>
           </a>
         </div>
