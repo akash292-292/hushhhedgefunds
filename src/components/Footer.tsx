@@ -7,11 +7,13 @@ export default function Footer() {
   // Check if the user is logged in
   let [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   useEffect(() => {
-    setTimeout(async () => {
-      isLoggedIn
-        ? ""
-        : setIsLoggedIn(await services.authentication.isLoggedIn(null));
-    }, 10);
+    const intervalId = setInterval(async () => {
+      if (!isLoggedIn) {
+        setIsLoggedIn(await services.authentication.isLoggedIn(null));
+      }
+    }, 10000); // Adjust the interval time as needed
+  
+    return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
 
   useEffect(() => {
