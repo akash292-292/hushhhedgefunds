@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import resources from "../resources/resources";
-
+import services from "../services/services";
+import { Image } from "@chakra-ui/react";
+import GoogleIcon from "../svg/googleIcon.svg";
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -76,6 +78,16 @@ export default function Signup() {
             className="w-full flex justify-center gap-4 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           >
             Sign Up
+          </button>
+          <button
+            type="submit"
+            className="w-full flex justify-center gap-4 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+            onClick={() => {
+              services.authentication.googleSignIn();
+            }}
+          >
+            <Image src={GoogleIcon} alt="Google Sign In" />
+            Google Sign In
           </button>
         </form>
       </div>
