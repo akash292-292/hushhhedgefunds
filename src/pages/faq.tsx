@@ -73,13 +73,13 @@ const faq = () => {
                 onClick={() => toggleAccordion(index)}
                 className="flex justify-between items-center p-6 cursor-pointer"
               >
-                <h3 className="text-lg md:text-xl font-semibold">{faq.question}</h3>
+                <h3 className="text-base md:text-xl font-semibold">{faq.question}</h3>
                 <span className="text-xl text-gray-600">
                   {openIndex === index ? <FiChevronUp /> : <FiChevronDown />}
                 </span>
               </div>
               {openIndex === index && (
-                <div className="px-6 pb-6 text-gray-700 transition-all duration-300">
+                <div className="px-6 text-sm md:text-lg pb-6 text-gray-700 transition-all duration-300">
                   <p>{faq.answer}</p>
                 </div>
               )}

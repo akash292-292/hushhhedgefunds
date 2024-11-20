@@ -185,6 +185,13 @@ export default function Navbar() {
               >
                 Contact
               </Link>
+              <Link
+                to="/faq"
+                onClick={toggleDrawer}
+                className="block text-lg font-semibold text-gray-700"
+              >
+                FAQ
+              </Link>
               <button
                 onClick={() => {
                   navigate('/Login');
