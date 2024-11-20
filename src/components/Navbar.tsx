@@ -41,7 +41,6 @@ export default function Navbar() {
             >
               About Us
             </Link>
-
             {/* Solution Dropdown */}
             <Menu as="div" className="relative">
               <Menu.Button className="px-3 py-2 text-gray-700 hover:text-gray-900">
@@ -130,7 +129,7 @@ export default function Navbar() {
                 onClick={toggleDrawer}
                 className="block text-lg font-semibold text-gray-700"
               >
-                Leadership Team
+                About Us
               </Link>
 
               {/* Solution Dropdown */}
