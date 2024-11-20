@@ -100,9 +100,14 @@ export default function Contact() {
           <div className="max-w-2xl mx-auto">
             <p className="mb-8 text-gray-700">
               For career-related inquiries, please visit our{' '}
-              <Link to="https://www.linkedin.com/company/hushh-ai/" className="text-red-700 hover:text-red-800">
-                Jobs
-              </Link>{' '}
+              <a
+  href="https://www.linkedin.com/company/hushh-ai/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-red-700 hover:text-red-800"
+>
+  Jobs
+</a>{' '}
               page.
             </p>
             <p className="mb-8 text-gray-700">
