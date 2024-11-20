@@ -41,16 +41,15 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6">
-            {/* About Dropdown */}
+            {/* About Link */}
             <Link
               to="/about/leadership"
-              className="bg-gray-100' block px-4 py-2 text-sm text-gray-700"
+              className="px-3 py-2 text-gray-700 hover:text-gray-900"
             >
               About Us
             </Link>
-
             {/* Solution Dropdown */}
-            {/* <Menu as="div" className="relative">
+            <Menu as="div" className="relative">
               <Menu.Button className="px-3 py-2 text-gray-700 hover:text-gray-900">
                 Solution
               </Menu.Button>
@@ -59,7 +58,9 @@ export default function Navbar() {
                   {({ active }) => (
                     <Link
                       to="/services/consumers"
-                      className={`${active ? 'bg-gray-100' : ''} block px-4 py-2 text-sm text-gray-700`}
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
                     >
                       For Consumers
                     </Link>
@@ -69,14 +70,16 @@ export default function Navbar() {
                   {({ active }) => (
                     <Link
                       to="/services/business"
-                      className={`${active ? 'bg-gray-100' : ''} block px-4 py-2 text-sm text-gray-700`}
+                      className={`${
+                        active ? 'bg-gray-100' : ''
+                      } block px-4 py-2 text-sm text-gray-700`}
                     >
                       For Businesses
                     </Link>
                   )}
                 </Menu.Item>
               </Menu.Items>
-            </Menu> */}
+            </Menu>
 
             {/* Careers Link */}
             <button
@@ -136,14 +139,13 @@ export default function Navbar() {
                 Home
               </Link>
 
-              {/* About Dropdown */}
-
+              {/* About Link */}
               <Link
                 to="/about/leadership"
                 onClick={toggleDrawer}
-                className={`${active ? "bg-gray-200" : ""} block px-4 py-2`}
+                className="block text-lg font-semibold text-gray-700"
               >
-                Leadership Team
+                About Us
               </Link>
 
               {/* Solution Dropdown */}
@@ -157,7 +159,9 @@ export default function Navbar() {
                       <Link
                         to="/services/consumers"
                         onClick={toggleDrawer}
-                        className={`${active ? 'bg-gray-200' : ''} block px-4 py-2`}
+                        className={`${
+                          active ? 'bg-gray-200' : ''
+                        } block px-4 py-2`}
                       >
                         For Consumers
                       </Link>
@@ -168,7 +172,9 @@ export default function Navbar() {
                       <Link
                         to="/services/business"
                         onClick={toggleDrawer}
-                        className={`${active ? 'bg-gray-200' : ''} block px-4 py-2`}
+                        className={`${
+                          active ? 'bg-gray-200' : ''
+                        } block px-4 py-2`}
                       >
                         For Businesses
                       </Link>
@@ -194,10 +200,16 @@ export default function Navbar() {
               >
                 Contact
               </Link>
-              {}
+              <Link
+                to="/faq"
+                onClick={toggleDrawer}
+                className="block text-lg font-semibold text-gray-700"
+              >
+                FAQ
+              </Link>
               <button
                 onClick={() => {
-                  navigate("/Login");
+                  navigate('/Login');
                   toggleDrawer();
                 }}
                 className="bg-red-700 text-white px-4 py-2 rounded hover:bg-red-800"
