@@ -1,15 +1,22 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Menu } from '@headlessui/react';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu } from "@headlessui/react";
+import { FiMenu, FiX } from "react-icons/fi";
+import services from "../services/services";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  let [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    setInterval(() => {
+      !isLoggedIn ? services.authentication.isLoggedIn(setIsLoggedIn) : "";
+    }, 10);
+  }, []);
   // Function to open the careers page in a new tab
   const openInNewTab = () => {
-    window.open('https://www.linkedin.com/company/hushh-ai/', '_blank');
+    window.open("https://www.linkedin.com/company/hushh-ai/", "_blank");
   };
 
   // Toggle the drawer
@@ -91,12 +98,21 @@ export default function Navbar() {
             </Link>
 
             {/* Login Button */}
-            <button
-              onClick={() => navigate('/Login')}
-              className="bg-black text-white px-4 py-2 rounded"
-            >
-              Log In
-            </button>
+            {!isLoggedIn ? (
+              <button
+                onClick={() => navigate("/Login")}
+                className="bg-black text-white px-4 py-2 rounded"
+              >
+                Log In
+              </button>
+            ) : (
+              <button
+                onClick={() => services.authentication.signOut()}
+                className="bg-black text-white px-4 py-2 rounded"
+              >
+                Log Out
+              </button>
+            )}
           </div>
         </div>
       </div>
