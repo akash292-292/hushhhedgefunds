@@ -19,7 +19,7 @@ export default function Leadership() {
       <section className="text-center mb-12">
         <h2 className="text-xl md:text-3xl font-bold mb-2">Our Mission</h2>
         <h3 className="text-lg md:text-2xl font-semibold mb-4">Innovative Strategies, Proven Results</h3>
-        <ul className="list-disc list-inside text-left mx-auto max-w-3xl space-y-2">
+        <ul className="list-disc list-inside text-left items-center mx-[30%] w-full space-y-2">
           <li>Cutting-edge AI-powered insights for smarter investments.</li>
           <li>Proprietary options-based strategies generating consistent income.</li>
           <li>Focused investments in cash-generating giants like Apple and Microsoft.</li>
