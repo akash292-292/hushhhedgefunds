@@ -10,7 +10,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Consumers from './pages/services/consumers';
 import Business from './pages/services/business';
 import Signup from './pages/Signup';
-import Faq from './pages/faq';
+import Faq from './pages/Faq';
 
 function App() {
   return (
