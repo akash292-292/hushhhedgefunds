@@ -11,9 +11,9 @@ export default function Footer() {
       if (!isLoggedIn) {
         setIsLoggedIn(await services.authentication.isLoggedIn(null));
       }
-      setIsLoggedIn(true)
-    }, 10000); // Adjust the interval time as needed
-  
+      setIsLoggedIn(true);
+    }, 10); // Adjust the interval time as needed
+
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
 
@@ -23,13 +23,11 @@ export default function Footer() {
   // Function to handle PDF download
   const handleDownload = (pdfPath: any) => {
     if (isLoggedIn) {
-    
       const link = document.createElement("a");
       link.href = pdfPath;
       link.download = pdfPath.split("/").pop();
       link.click();
     } else {
-    
       toast.error("Please log in first to access this content.");
     }
   };

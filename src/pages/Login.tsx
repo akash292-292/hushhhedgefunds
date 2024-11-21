@@ -5,6 +5,7 @@ import services from "../services/services";
 import GoogleIcon from "../svg/googleIcon.svg";
 import { Image } from "@chakra-ui/react";
 import { notification } from "antd";
+import resources from "../resources/resources";
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -38,83 +39,109 @@ export default function Login() {
 
         {/* Login Form */}
         <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
-                required
-              />
-            </div>
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 grid justify-center items-center"
+          >
+            {resources.config.featureFlags.showEmailLogin ? (
+              <>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    required
+                  />
+                </div>
 
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Password
-              </label>
-              <div className="relative mt-1">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
-                  required
-                />
+                <div>
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Password
+                  </label>
+                  <div className="relative mt-1">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      id="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500"
+                      required
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-500"
+                    >
+                      {showPassword ? (
+                        <EyeOff className="h-5 w-5" />
+                      ) : (
+                        <Eye className="h-5 w-5" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+
                 <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-500"
+                  type="submit"
+                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                  onClick={async () => {
+                    let response = await services.authentication.emailLogin(
+                      email,
+                      password
+                    );
+                    if (response == "error") {
+                      openNotification(
+                        "Invalid Credentials, Please try again",
+                        "Error",
+                        0
+                      );
+                    }
+                  }}
                 >
-                  {showPassword ? (
-                    <EyeOff className="h-5 w-5" />
-                  ) : (
-                    <Eye className="h-5 w-5" />
-                  )}
+                  Log in
                 </button>
-              </div>
-            </div>
+              </>
+            ) : (
+              <></>
+            )}
 
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-              onClick={async () => {
-                let response = await services.authentication.emailLogin(
-                  email,
-                  password
-                );
-                if (response == "error") {
-                  openNotification(
-                    "Invalid Credentials, Please try again",
-                    "Error",
-                    0
-                  );
-                }
-              }}
-            >
-              Log in
-            </button>
-
-            <button
-              type="submit"
-              className="w-full flex justify-center gap-4 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              className="grid justify-center"
               onClick={() => {
                 services.authentication.googleSignIn();
               }}
             >
-              <Image src={GoogleIcon} alt="Google Sign In" />
-              Google Sign In
+              <Image
+                height={"40pt"}
+                src={resources.images.googleSignInButton}
+                alt="Google Sign In"
+              />
+            </button>
+
+            <button
+              
+              type="submit"
+              onClick={() => {
+                services.authentication.appleSignIn();
+              }}
+            >
+              <Image
+                height={"40pt"}
+                src={resources.images.appleSignInButton}
+                alt="Google Sign In"
+              />
             </button>
 
             {/* <div className="text-sm text-center">
