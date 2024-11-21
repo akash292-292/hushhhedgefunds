@@ -22,7 +22,7 @@ export default function Hero() {
             Precision in Data. Power in Investing. Purpose in Results.
           </p>
           <p className="text-base md:text-lg lg:text-xl mb-6">
-            At Hushh 🤫 Technologies, we leverage advanced math, AI, and
+            At Hushh Technologies, we leverage advanced math, AI, and
             statistics to generate sustainable alpha in a dynamic market. Invest
             in the future of wealth with us.
           </p>
