@@ -53,7 +53,7 @@ const faqs = [
   
 ];
 
-const faq = () => {
+const Faq = () => {
     const [openIndex, setOpenIndex] = useState(null);
   
     const toggleAccordion = (index) => {
@@ -90,4 +90,4 @@ const faq = () => {
     );
   };
   
-  export default faq;
+  export default Faq;

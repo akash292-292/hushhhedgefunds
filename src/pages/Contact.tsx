@@ -101,7 +101,7 @@ export default function Contact() {
             <p className="mb-8 text-gray-700">
               For career-related inquiries, please visit our{' '}
               <a
-  href="https://www.linkedin.com/company/hushh-ai/"
+  href="https://www.linkedin.com/in/manishsainani/"
   target="_blank"
   rel="noopener noreferrer"
   className="text-red-700 hover:text-red-800"

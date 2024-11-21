@@ -16,7 +16,7 @@ export default function Navbar() {
   }, []);
   // Function to open the careers page in a new tab
   const openInNewTab = () => {
-    window.open("https://www.linkedin.com/company/hushh-ai/", "_blank");
+    window.open("https://www.linkedin.com/in/manishsainani/", "_blank");
   };
 
   // Toggle the drawer
@@ -201,7 +201,7 @@ export default function Navbar() {
                 Contact
               </Link>
               <Link
-                to="/faq"
+                to="/Faq"
                 onClick={toggleDrawer}
                 className="block text-lg font-semibold text-gray-700"
               >

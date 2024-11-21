@@ -120,7 +120,7 @@ export default function Philosophy() {
           Whether you're an individual or an institution, Hushh 🤫 Technologies LLC invites you to join us on our journey.
         </p>
         <div className="flex justify-center">
-          <a  href="https://www.linkedin.com/company/hushh-ai/"  target="_blank"
+          <a  href="https://www.linkedin.com/in/manishsainani/"  target="_blank"
   rel="noopener noreferrer" className="text-red-600 hover:text-red-700 flex items-center">
           </a>
         </div>

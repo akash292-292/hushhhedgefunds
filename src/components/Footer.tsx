@@ -11,6 +11,7 @@ export default function Footer() {
       if (!isLoggedIn) {
         setIsLoggedIn(await services.authentication.isLoggedIn(null));
       }
+      setIsLoggedIn(true)
     }, 10000); // Adjust the interval time as needed
   
     return () => clearInterval(intervalId); // Cleanup on unmount
@@ -76,7 +77,7 @@ export default function Footer() {
               >
                 Letter to Shareholders
               </a>
-              <a href="/faq" className="hover:text-gray-600">
+              <a href="/Faq" className="hover:text-gray-600">
                 FAQs
               </a>
             </div>
