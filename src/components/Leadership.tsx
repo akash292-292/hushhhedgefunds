@@ -90,12 +90,6 @@ export default function Leadership() {
         <p className="text-base md:text-lg mb-4">
           Whether you're an individual or an institution, Hushh 🤫 Technologies LLC invites you to join us on our journey.
         </p>
-        <div className="flex justify-center">
-          <a href="https://hushhtechnologies.netlify.app/Login"  target="_blank"
-  rel="noopener noreferrer" className="text-red-600 hover:text-red-700 flex items-center">
-            {/* Know more about us <span className="ml-2">→</span> */}
-          </a>
-        </div>
       </section>
     </div>
   );
