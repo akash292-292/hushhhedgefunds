@@ -43,6 +43,7 @@ export default function Footer() {
             <p>Hushh 🤫 Technologies LLC</p>
             <p>1021 5th St W, Kirkland, WA 98033</p>
             <p>+1 (765) 532-4284</p>
+            <p>Office Hours : 10:00 AM- 7:00 PM</p>
           </div>
           <div className="text-left flex items-end justify-end">
             <div className="flex text-sm space-x-6 space-y-2 text-gray-400 flex-col text-right">
