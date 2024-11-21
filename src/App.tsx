@@ -10,7 +10,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Consumers from './pages/services/consumers';
 import Business from './pages/services/business';
 import Signup from './pages/Signup';
-import Faq from './pages/Faq';
+import Faq from './pages/faq';
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
           <Route path='/services/consumers' element={<Consumers/>} />
           <Route path='/services/business' element={<Business/>}/>
           <Route path='/Signup' element={<Signup/>}/>
-          <Route path='/Faq' element={<Faq/>}/>
+          <Route path='/faq' element={<Faq/>}/>
         </Routes>
         <Footer />
       </div>
