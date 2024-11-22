@@ -48,7 +48,7 @@ export default function Footer() {
               {/* Updated Links with download functionality */}
               <a
                 onClick={() =>
-                  handleDownload("../../public/History_and_Milestone.pdf")
+                  handleDownload("../resources/HistoryAndMilestone.pdf")
                 }
                 className="hover:text-gray-600 cursor-pointer"
               >
@@ -56,9 +56,7 @@ export default function Footer() {
               </a>
               <a
                 onClick={() =>
-                  handleDownload(
-                    "../../public/Strategy_and_Profit_Projection.pdf"
-                  )
+                  handleDownload("../resources/StrategyAndProfitProjection.pdf")
                 }
                 className="hover:text-gray-600 cursor-pointer"
               >
@@ -71,7 +69,7 @@ export default function Footer() {
               <a
                 className="hover:text-gray-600 cursor-pointer"
                 onClick={() =>
-                  handleDownload("../../public/letter_to_shareholder.pdf")
+                  handleDownload("../resources/LetterToShareholder.pdf")
                 }
               >
                 Letter to Shareholders
