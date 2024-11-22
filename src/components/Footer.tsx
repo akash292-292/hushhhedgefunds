@@ -5,26 +5,18 @@ import services from "../services/services";
 import files from "../resources/files/files";
 
 export default function Footer() {
-  let [selectedFile, setSelectedFile] = useState<any>("");
   // Check if the user is logged in
-  useEffect(() => {
-    console.log(selectedFile);
-  }, [selectedFile]);
+
   let [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   useEffect(() => {
     const intervalId = setInterval(async () => {
       if (!isLoggedIn) {
         setIsLoggedIn(await services.authentication.isLoggedIn(null));
       }
-      setIsLoggedIn(true);
     }, 10); // Adjust the interval time as needed
-
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
 
-  useEffect(() => {
-    console.log(isLoggedIn);
-  }, [isLoggedIn]);
   // Function to handle PDF download
   const handleDownload = (file: any) => {
     if (isLoggedIn) {
