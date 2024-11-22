@@ -2,9 +2,14 @@ import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import services from "../services/services";
+import files from "../resources/files/files";
 
 export default function Footer() {
+  let [selectedFile, setSelectedFile] = useState<any>("");
   // Check if the user is logged in
+  useEffect(() => {
+    console.log(selectedFile);
+  }, [selectedFile]);
   let [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   useEffect(() => {
     const intervalId = setInterval(async () => {
@@ -21,11 +26,12 @@ export default function Footer() {
     console.log(isLoggedIn);
   }, [isLoggedIn]);
   // Function to handle PDF download
-  const handleDownload = (pdfPath: any) => {
+  const handleDownload = (file: any) => {
     if (isLoggedIn) {
+      // download the file
       const link = document.createElement("a");
-      link.href = pdfPath;
-      link.download = pdfPath.split("/").pop();
+      link.href = file;
+      link.download = file;
       link.click();
     } else {
       toast.error("Please log in first to access this content.");
@@ -34,6 +40,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-white text-black mt-auto">
+      
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -47,18 +54,14 @@ export default function Footer() {
             <div className="flex text-sm space-x-6 space-y-2 text-gray-400 flex-col text-right">
               {/* Updated Links with download functionality */}
               <a
-                onClick={() =>
-                  handleDownload("../resources/files/HistoryAndMilestone.pdf")
-                }
+                onClick={() => handleDownload(files.historyAndMilestones)}
                 className="hover:text-gray-600 cursor-pointer"
               >
                 History and Milestones
               </a>
               <a
                 onClick={() =>
-                  handleDownload(
-                    "../resources/files/StrategyAndProfitProjection.pdf"
-                  )
+                  handleDownload(files.strategyAndProfitProjection)
                 }
                 className="hover:text-gray-600 cursor-pointer"
               >
@@ -70,9 +73,7 @@ export default function Footer() {
               {/* <a href="/support" className="hover:text-gray-600">Compliance & Legal</a> */}
               <a
                 className="hover:text-gray-600 cursor-pointer"
-                onClick={() =>
-                  handleDownload("../resources/files/LetterToShareholder.pdf")
-                }
+                onClick={() => handleDownload(files.letterToShareholder)}
               >
                 Letter to Shareholders
               </a>
