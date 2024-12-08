@@ -25,10 +25,7 @@ const CareerList = () => {
         ))}
       </div>
       
-      <footer className="career-footer">
-        <p>© 2024 Hushh Technologies. All Rights Reserved.</p>
-        
-      </footer>
+      
     </div>
   );
 };
