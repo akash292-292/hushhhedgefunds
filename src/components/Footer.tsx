@@ -2,37 +2,40 @@ import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import services from "../services/services";
-import files from "../resources/files/files";
 
 export default function Footer() {
   // Check if the user is logged in
-
   let [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   useEffect(() => {
     const intervalId = setInterval(async () => {
       if (!isLoggedIn) {
         setIsLoggedIn(await services.authentication.isLoggedIn(null));
       }
-    }, 10); // Adjust the interval time as needed
+      setIsLoggedIn(true)
+    }, 10000); // Adjust the interval time as needed
+  
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
 
+  useEffect(() => {
+    console.log(isLoggedIn);
+  }, [isLoggedIn]);
   // Function to handle PDF download
-  const handleDownload = (file: any) => {
+  const handleDownload = (pdfPath: any) => {
     if (isLoggedIn) {
-      // download the file
+    
       const link = document.createElement("a");
-      link.href = file;
-      link.download = file;
+      link.href = pdfPath;
+      link.download = pdfPath.split("/").pop();
       link.click();
     } else {
+    
       toast.error("Please log in first to access this content.");
     }
   };
 
   return (
     <footer className="bg-white text-black mt-auto">
-      
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
@@ -46,14 +49,18 @@ export default function Footer() {
             <div className="flex text-sm space-x-6 space-y-2 text-gray-400 flex-col text-right">
               {/* Updated Links with download functionality */}
               <a
-                onClick={() => handleDownload(files.historyAndMilestones)}
+                onClick={() =>
+                  handleDownload("../../public/History_and_Milestone.pdf")
+                }
                 className="hover:text-gray-600 cursor-pointer"
               >
                 History and Milestones
               </a>
               <a
                 onClick={() =>
-                  handleDownload(files.strategyAndProfitProjection)
+                  handleDownload(
+                    "../../public/Strategy_and_Profit_Projection.pdf"
+                  )
                 }
                 className="hover:text-gray-600 cursor-pointer"
               >
@@ -64,8 +71,10 @@ export default function Footer() {
               {/* <a href="/brokercheck" className="hover:text-gray-600">Investor Relations</a> */}
               {/* <a href="/support" className="hover:text-gray-600">Compliance & Legal</a> */}
               <a
-                className="hover:text-gray-600 cursor-pointer"
-                onClick={() => handleDownload(files.letterToShareholder)}
+                className="hover:text-gray-600"
+                onClick={() =>
+                  handleDownload("../../public/letter_to_shareholder.pdf")
+                }
               >
                 Letter to Shareholders
               </a>
