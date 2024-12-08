@@ -27,10 +27,7 @@ const CareerList = () => {
       
       <footer className="career-footer">
         <p>© 2024 Hushh Technologies. All Rights Reserved.</p>
-        <p className="disclaimer">
-          The materials on this website are for illustration and discussion purposes only.
-          PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.
-        </p>
+        
       </footer>
     </div>
   );
